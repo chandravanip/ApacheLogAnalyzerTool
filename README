@@ -1,0 +1,84 @@
+
+A python script to analyze apache httpd logs. This program analyzes apache logs and generates a report
+with the following options mentioned below:
+
+$ python ApachehttpdLogParser.py -h 
+usage: ApachehttpdLogParser [-h] [-o OUTPUTFILE] [-r HTMLFILE] [-A] [-B] [-C]
+                            [-D] [-E]
+                            input_logfile_name
+
+This script parses user provided <input_log_filename> apache httpd log file
+and displays log file statistics. Also user can provide optional arguments
+
+positional arguments:
+  input_logfile_name    Give input log file name
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUTFILE, --outputfile OUTPUTFILE
+                        Give output file name
+  -r HTMLFILE, --htmlfile HTMLFILE
+                        html file report
+  -A, --TOP10REQUESTS   PRINT TOP 10 REQUESTS
+  -B, --PERSUCESSFULREQUESTS
+                        PRINTS PERCENTAGE OF SUCCESSSFUL REQUESTS
+  -C, --PERUNSUCESSFULREQUESTS
+                        PRINTS PERCENTAGE OF UNSUCCESSSFUL REQUESTS
+  -D, --TOP10UNSUCCESSFULREQUESTS
+                        PRINTS TOP 10 UNSUCCESFUL REQUESTS
+  -E, --TOP10IPREQUESTS
+                        PRINTS TOP 10 IP REQUESTS
+
+
+Example ApcacheLogAnalyzerReport:
+
+$ python ApachehttpdLogParser.py apache-httpd.log 
+ 
+TOP 10 REQUESTS
+Number of Times       vs     Requested page
+    161      "/statistics/list.php HTTP/1.1"
+    156      "/finance/get.php HTTP/1.1"
+    155      "/kernel/set.php HTTP/1.1"
+    153      "/system/list.php HTTP/1.1"
+    152      "/finance/call.php HTTP/1.1"
+    151      "/finance/request.php HTTP/1.0"
+    151      "/finance/remove.php HTTP/1.1"
+    150      "/printer/list.php HTTP/1.0"
+    149      "/system/search.php HTTP/1.0"
+    148      "/statistics/list.php HTTP/1.0"
+  38354 
+ 
+PERCENTAGE OF SUCCESSFUL REQUESTS
+  53.277584 
+ 
+PERCENTAGE OF UNSUCCESSFUL REQUESTS
+  82.301463 
+ 
+TOP 10 UNSUCCESSFUL REQUESTS
+Number of Times       vs     Requested page
+    238      "/finance/remove.php HTTP/1.1"
+    237      "/system/list.php HTTP/1.1"
+    237      "/kernel/set.php HTTP/1.1"
+    231      "/finance/get.php HTTP/1.1"
+    231      "/finance/set.php HTTP/1.0"
+    230      "/finance/call.php HTTP/1.1"
+    229      "/kernel/call.php HTTP/1.0"
+    228      "/system/search.php HTTP/1.0"
+    225      "/statistics/get.php HTTP/1.0"
+    224      "/finance/call.php HTTP/1.0"
+  59248 Total
+ 
+TOP 10 IP REQUESTS
+Number of Times       vs     Requested page
+      7      10.0.103.230
+      6      10.0.195.20
+      6      10.0.153.175
+      6      10.0.82.145
+      6      10.0.143.33
+      6      10.0.84.143
+      6      10.0.40.140
+      5      10.0.51.38
+      5      10.0.66.71
+      5      10.0.119.198
+root main:328 Run proceeded for 1.14 seconds
+
