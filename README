@@ -1,6 +1,6 @@
 
-A python script to analyze apache httpd logs. This program analyzes apache logs and generates a report
-with the following options mentioned below:
+A python script to analyze apache httpd logs. This program analyzes apache logs and generates 
+a report with the following options mentioned below:
 
 $ python ApachehttpdLogParser.py -h 
 usage: ApachehttpdLogParser [-h] [-o OUTPUTFILE] [-r HTMLFILE] [-A] [-B] [-C]
